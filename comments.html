@@ -1,0 +1,46 @@
+any piece of jsx component we write there can only be one parent.
+one parent element
+//jsx have only one parent
+react.Fragment works as a empty tag.
+const jsx=(
+    <> //shorthand
+        <h1>jsx</h1>
+        <h1>asdas</h1>
+    </>    
+);
+
+or
+
+const jsx=(
+    <react.Fragment> 
+        <h1>jsx</h1>
+        <h1>asdas</h1>
+    </react.Fragment>    
+);
+<!-- ! config driven api if told in interview will be a huge point-->
+//config driven UI 
+we dont require different website for kolkata, dehradun and lakhimpur kheri but
+we want same website but with different contents on basis of region.
+we control our content using config
+
+<!-- 
+    *hw : optional chaning
+ -->
+ props are the property which are passed into component
+
+ <!-- 
+    *hw : spread operator 
+    *h2 : map in js and dif btw map and for each
+  -->
+  //virtual representation of dom is vtirtualdom
+  react uses reconciliation that makes it fast using diff algorithm.
+  diff algorithm find outs the difference btw trees it will only rerender specific portion of the app 
+  which is found by diff algo
+  <!-- 
+    *hw react : fiber (react16 new reconciiation engine responsible for DIFF)
+   -->
+   //react, why not to use index as a key.
+   no key(not acceptable) <<<<< index key(use only if dont have anything)<< unique key(best practice)
+ <!-- 
+    !to achive modularity we create src folder
+  -->
