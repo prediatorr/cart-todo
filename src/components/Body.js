@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
-import { restrautList } from "../Constant";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import { filterData } from "./utils/helper";
+import useOnline from "./utils/useOnline"
 //hooks are normal function
-//
-function filterData(searchText, restaurants) {
-  if (searchText != "") {
-    return restaurants.filter((restaurant) =>
-      restaurant?.info?.name?.toLowerCase().includes(searchText.toLowerCase())
-    );
-  } else return restrautList;
-}
+ 
+
 
 const Body = () => {
   //const searchTxt ="KFC";
@@ -41,6 +37,10 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
+    // const isOnline= useOnline();
+    // if(!isOnline ){
+    //   return <h1 >Offline,please check your internet connection!!</h1>
+    // }
 
   //not render component (early return)
   if (!allRestaurants) return null;
@@ -73,10 +73,10 @@ const Body = () => {
         <div className="restaurant-list">
           {filteredRestaurants?.map((restaurant) => {
             return (
-              <RestaurantCard
+              <Link to={"/restaurant/"+restaurant?.info?.id} key={restaurant?.info?.id}><RestaurantCard
                 key={restaurant?.info?.id}
                 {...restaurant?.info}
-              />
+              /></Link>
             );
           })}
         </div>

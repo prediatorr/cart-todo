@@ -1,3 +1,11 @@
+/* 
+* Normal Native css
+* Scss
+*inline CSS
+*Component Libraries - Material UI, Base UI, Ant, Chakra
+
+*/
+
 .header{
     display: flex;
     justify-content: space-between;
