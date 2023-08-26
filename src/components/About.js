@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Profile from "./Profile";
 import ProfileClass from "./ProfileClass";
 import { Component } from "react";
+import UserContext from "./utils/UserContext";
 
 // const About2 = () => {
 //   return (
@@ -43,10 +44,11 @@ class About extends Component {
   }
   render() {
     console.log("parent-render");
-    return (
+    return ( 
       <div>
         <h1>About Us Page</h1>
         <p>This is the food delivery App</p>
+        {/* <UserContext.Consumer>{({user})=><h4>{user.name}</h4>}</UserContext.Consumer> */}
         <Outlet />
          {/* <Profile name={"RAJEEV"} /> */}
         <ProfileClass name={"RAJEEV Class"} />

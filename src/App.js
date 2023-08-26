@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import Header from "./components/Header";
@@ -10,7 +10,9 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestrauntMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
-
+import {Provider} from "react-redux"
+import store  from "./components/utils/store";
+import Cart from "./components/Cart";
 //bundle chunking
 //code splitting
 //dynamic loading
@@ -52,12 +54,13 @@ const Instamart = lazy(() => import("./components/Instamart"));
 //props- properties
 
 const AppLayout = () => {
+  
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
@@ -96,11 +99,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/instamart",
         element: (
-          <Suspense fallback={<Shimmer/>} >
+          <Suspense fallback={<Shimmer />}>
             <Instamart />
           </Suspense>
         ),
       },
+      {
+        path:"/cart",
+        element:<Cart/>
+
+      }
     ],
   },
 ]);

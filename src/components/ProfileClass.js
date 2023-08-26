@@ -31,6 +31,7 @@ class Profile extends React.Component {
     const { count } = this.state;
     return (
       <><br />
+      
       <img src={this.state?.userInfo?.avatar_url} alt="" />
         <h1> UserName: {this.state?.userInfo?.login }</h1>
         <h2>Location: {this.state?.userInfo?.location}</h2>
