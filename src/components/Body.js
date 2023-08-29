@@ -57,6 +57,7 @@ const Body = () => {
         />
 
         <button
+        data-testid="search-btn"
           className="p-1 m-2 bg-green-400 rounded-md w-20"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);

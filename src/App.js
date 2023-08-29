@@ -13,6 +13,7 @@ import Shimmer from "./components/Shimmer";
 import {Provider} from "react-redux"
 import store  from "./components/utils/store";
 import Cart from "./components/Cart";
+import TodoList from "./components/ToDo-List";
 //bundle chunking
 //code splitting
 //dynamic loading
@@ -108,6 +109,10 @@ const appRouter = createBrowserRouter([
         path:"/cart",
         element:<Cart/>
 
+      },
+      {
+        path:"/todo",
+        element:<TodoList/>
       }
     ],
   },
